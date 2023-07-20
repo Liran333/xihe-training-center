@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/opensourceways/community-robot-lib/utils"
 
+	xiheutils "github.com/opensourceways/xihe-server/utils"
 	"github.com/opensourceways/xihe-training-center/domain"
 	"github.com/opensourceways/xihe-training-center/huaweicloud/trainingimpl"
 	"github.com/opensourceways/xihe-training-center/infrastructure/mysql"
@@ -67,7 +68,7 @@ func (cfg *configuration) setDefault() {
 func loadConfig(path string) (*configuration, error) {
 	v := new(configuration)
 
-	if err := utils.LoadFromYaml(path, v); err != nil {
+	if err := xiheutils.LoadFromYaml(path, v); err != nil {
 		return nil, err
 	}
 
